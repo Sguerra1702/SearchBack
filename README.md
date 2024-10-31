@@ -45,12 +45,9 @@ Instrucciones para la instalación del módulo (se detallan según el entorno es
 2. **Seleccionar criterio de búsqueda**: Elegir uno o más criterios para filtrar los resultados.
 3. **Visualizar resultados**: Los resultados se mostrarán de acuerdo con los criterios seleccionados.
 
-## Contribuciones
+## Integrantes
 
-Se invita a los desarrolladores a contribuir al módulo mediante la mejora de características o la corrección de errores. Para hacerlo, por favor siga las pautas de contribución establecidas en este repositorio.
-
-## Licencia
-
-Este proyecto está bajo la licencia [CVDS], lo que permite su uso y modificación según los términos especificados.
-
----
+Paula Natalia Paez Vega
+Andres Felipe Rodriguez Chaparro
+Santiago Guerra Penagos
+Manuel Felipe Barrera Barrera

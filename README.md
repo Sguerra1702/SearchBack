@@ -47,7 +47,8 @@ Instrucciones para la instalación del módulo (se detallan según el entorno es
 
 ## Integrantes
 
-Paula Natalia Paez Vega
-Andres Felipe Rodriguez Chaparro
-Santiago Guerra Penagos
-Manuel Felipe Barrera Barrera
+- Paula Natalia Paez Vega
+- Andres Felipe Rodriguez Chaparro
+- Santiago Guerra Penagos
+- Marco Antonio Alvarez Vega
+- Manuel Felipe Barrera Barrera

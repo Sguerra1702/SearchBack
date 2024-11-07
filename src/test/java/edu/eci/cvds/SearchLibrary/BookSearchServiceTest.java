@@ -5,10 +5,11 @@ import edu.eci.cvds.SearchLibrary.Repository.SearchRepository;
 import edu.eci.cvds.SearchLibrary.Service.BookSearchService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+
 import java.util.Arrays;
 import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -17,10 +18,10 @@ import static org.mockito.Mockito.*;
 @SpringBootTest
 public class BookSearchServiceTest {
 
-    @Mock
+    @MockBean
     private SearchRepository searchRepository;
 
-    @InjectMocks
+    @Autowired
     private BookSearchService bookSearchService;
 
     private List<Search> books;
@@ -29,7 +30,7 @@ public class BookSearchServiceTest {
     public void setUp() {
         MockitoAnnotations.openMocks(this);
 
-        books = Arrays.asList(
+        books= Arrays.asList(
                 new Search("Effective Java", "Joshua Bloch", "Programming"),
                 new Search("Java Concurrency", "Brian Goetz", "Programming"),
                 new Search("Clean Code", "Robert C. Martin", "Programming"),
@@ -56,7 +57,7 @@ public class BookSearchServiceTest {
         assertEquals(2, result.size());
         verify(searchRepository, times(1)).findByTitleContaining("Java");
     }
-
+    
     @Test
     public void testSearchBooksByAuthor() {
         List<Search> result = bookSearchService.SearchBooks(null, "Martin", null);
@@ -77,4 +78,5 @@ public class BookSearchServiceTest {
         assertEquals(6, result.size());
         verify(searchRepository, times(1)).findAll();
     }
+
 }

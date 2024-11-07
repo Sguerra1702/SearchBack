@@ -1,12 +1,17 @@
 package edu.eci.cvds.SearchLibrary;
 
 import edu.eci.cvds.SearchLibrary.Model.Search;
+
 import org.junit.jupiter.api.Test;
+
 import org.springframework.boot.test.context.SpringBootTest;
 import static org.junit.jupiter.api.Assertions.*;
 
+
+
 @SpringBootTest
-class SearchLibraryApplicationTests {
+	public class SearchLibraryApplicationTests {
+
 
 	@Test
 	void testDefaultConstructor() {
@@ -78,5 +83,8 @@ class SearchLibraryApplicationTests {
 		search.setisbn(987654321L);
 		assertEquals(987654321L, search.getisbn());
 	}
+
+
+
 }
 

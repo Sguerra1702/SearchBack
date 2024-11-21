@@ -4,10 +4,7 @@ import edu.eci.cvds.SearchLibrary.Model.Search;
 
 import edu.eci.cvds.SearchLibrary.Service.BookSearchService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -29,4 +26,15 @@ public class SearchController {
             @RequestParam(required = false) String category) {
         return bookSearchService.SearchBooks(title, author, category);
     }
+
+    @GetMapping("/books/{id}/estado")
+    public String consultarEstado(@PathVariable Long  id) {
+        try {
+            return bookSearchService.consultarEstado(id);
+        } catch (RuntimeException e) {
+            return "Error: " + e.getMessage();
+        }
+    }
+
+
 }

@@ -12,6 +12,7 @@ public class Search {
     private String author;
     private String category;
     private Long isbn;
+    private String state;
 
 
 
@@ -23,7 +24,6 @@ public class Search {
         this.title=title;
         this.author=author;
         this.category=category;
-
     }
 
     //Getters
@@ -47,6 +47,8 @@ public class Search {
         return isbn;
     }
 
+    public String getState() {return state;}
+
     //Setters
 
     public void setBookId(long BookId){
@@ -68,4 +70,6 @@ public class Search {
     public void setisbn(long isbn){
         this.isbn=isbn;
     }
+
+    public void setState() {this.state=state;}
 }

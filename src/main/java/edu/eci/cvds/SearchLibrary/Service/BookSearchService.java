@@ -1,5 +1,6 @@
 package edu.eci.cvds.SearchLibrary.Service;
 
+import java.util.Optional;
 import edu.eci.cvds.SearchLibrary.Repository.SearchRepository;
 import edu.eci.cvds.SearchLibrary.Model.Search;
 import java.util.List;
@@ -22,7 +23,16 @@ public class BookSearchService {
         } else if (category != null && !category.isEmpty()) {
             return searchRepository.findBycategoryContaining(category);
         }
-
         return searchRepository.findAll();
     }
+
+    public String consultarEstado(Long  bookID) {
+        Optional<Search> optionalSearch = searchRepository.findById(bookID);
+        if (optionalSearch.isPresent()) {
+            return optionalSearch.get().getState();
+        } else {
+            throw new RuntimeException("Libro no encontrado con ID: " + bookID);
+        }
+    }
+
 }

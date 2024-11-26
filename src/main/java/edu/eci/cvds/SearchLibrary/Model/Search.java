@@ -1,12 +1,15 @@
 package edu.eci.cvds.SearchLibrary.Model;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "books")
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+
 
 public class Search {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private String bookID; // Se cambio a String 
     private String title;
     private String author;

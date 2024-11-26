@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/search")
+@RequestMapping("/books")
 public class SearchController {
 
     private final BookSearchService bookSearchService;
@@ -19,7 +19,7 @@ public class SearchController {
         this.bookSearchService = bookSearchService;
     }
 
-    @GetMapping("/books")
+    @GetMapping("/search")
     public List<Search> searchBooks(
             @RequestParam(required = false) String title,
             @RequestParam(required = false) String author,

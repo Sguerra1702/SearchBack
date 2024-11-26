@@ -19,7 +19,7 @@ public class DatabaseController {
         this.databaseService = databaseService;
     }
 
-    @GetMapping("/tables")
+    @GetMapping("/table")
     public List<String> getTables() {
         return databaseService.getAllTables();
     }

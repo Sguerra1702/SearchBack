@@ -1,8 +1,6 @@
 package edu.eci.cvds.SearchLibrary.Model;
 
 import jakarta.persistence.Id;
-
-
 import jakarta.persistence.Entity;
 
 @Entity

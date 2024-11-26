@@ -3,6 +3,7 @@ package edu.eci.cvds.SearchLibrary.Controller;
 import edu.eci.cvds.SearchLibrary.Model.Search;
 
 import edu.eci.cvds.SearchLibrary.Service.BookSearchService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,7 +20,7 @@ public class SearchController {
         this.bookSearchService = bookSearchService;
     }
 
-    @GetMapping("/search")
+    @GetMapping("/searchBooks")
     public List<Search> searchBooks(
             @RequestParam(required = false) String title,
             @RequestParam(required = false) String author,
@@ -35,6 +36,5 @@ public class SearchController {
             return "Error: " + e.getMessage();
         }
     }
-
 
 }

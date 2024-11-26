@@ -1,7 +1,6 @@
 package edu.eci.cvds.SearchLibrary;
 
 import edu.eci.cvds.SearchLibrary.Model.Search;
-import edu.eci.cvds.SearchLibrary.Config.DataSourceConfig;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -93,6 +92,11 @@ class SearchLibraryApplicationTests {
 		try (Connection connection = managementDataSource.getConnection()){
 			assertNotNull(connection,"la base de datos fallo xd ");
 		}
+	}
+
+	@Test
+	void testBasededatos(){
+		
 	}
 }
 

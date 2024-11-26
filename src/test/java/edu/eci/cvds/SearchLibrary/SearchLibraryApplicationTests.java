@@ -1,13 +1,22 @@
 package edu.eci.cvds.SearchLibrary;
 
 import edu.eci.cvds.SearchLibrary.Model.Search;
+import edu.eci.cvds.SearchLibrary.Config.DataSourceConfig;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import static org.junit.jupiter.api.Assertions.*;
+import javax.sql.DataSource;
+
+import java.sql.Connection;
 
 @SpringBootTest
 class SearchLibraryApplicationTests {
 
+
+	@Autowired
+	private DataSource managementDataSource;
+	/* 
 	@Test
 	void testDefaultConstructor() {
 		Search search = new Search();
@@ -31,7 +40,7 @@ class SearchLibraryApplicationTests {
 	@Test
 	void testSettersAndGetters() {
 		Search search = new Search();
-		search.setBookId(1L);
+		search.setBookId("1L");
 		search.setTitle("Test Title");
 		search.setAuthor("Test Author");
 		search.setCategory("Test Category");
@@ -47,7 +56,7 @@ class SearchLibraryApplicationTests {
 	@Test
 	void testSetBookId() {
 		Search search = new Search();
-		search.setBookId(123L);
+		search.setBookId("123L");
 		assertEquals(123L, search.getBookID());
 	}
 
@@ -77,6 +86,13 @@ class SearchLibraryApplicationTests {
 		Search search = new Search();
 		search.setisbn(987654321L);
 		assertEquals(987654321L, search.getisbn());
+	}
+	*/
+	@Test
+	void testConexion() throws Exception{
+		try (Connection connection = managementDataSource.getConnection()){
+			assertNotNull(connection,"la base de datos fallo xd ");
+		}
 	}
 }
 

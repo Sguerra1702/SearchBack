@@ -7,12 +7,17 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 public class Search {
     @Id
-    private Long bookID;
+    private String bookID; // Se cambio a String 
     private String title;
     private String author;
     private String category;
     private Long isbn;
     private String state;
+    //Nuevo
+    private String searchType; 
+    private String searchParameter;
+    private String searchResult; 
+
 
 
 
@@ -27,7 +32,7 @@ public class Search {
     }
 
     //Getters
-    public Long getBookID(){
+    public String getBookID(){
         return bookID;
     }
 
@@ -49,9 +54,22 @@ public class Search {
 
     public String getState() {return state;}
 
+    public String getsearchparameter(){
+        return searchParameter;
+    }
+
+    public String getsearchType(){
+        return searchType;
+    }
+
+    public String getsearchresult(){
+        return searchResult;
+    }
+
+
     //Setters
 
-    public void setBookId(long BookId){
+    public void setBookId(String BookId){
         this.bookID=BookId;
     }
 
@@ -71,5 +89,15 @@ public class Search {
         this.isbn=isbn;
     }
 
-    public void setState() {this.state=state;}
+    public void setSearchType(String searchType){
+        this.searchType=searchType;
+    }
+
+    public void setSearchParameter(String searchParameter){
+        this.searchParameter=searchParameter;
+    }
+
+    public void setSearchResult(String searchResult){
+        this.searchResult=searchResult;
+    }
 }

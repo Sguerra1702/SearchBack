@@ -16,7 +16,7 @@ class SearchLibraryApplicationTests {
 
 	@Autowired
 	private DataSource managementDataSource;
-	/* 
+
 	@Test
 	void testDefaultConstructor() {
 		Search search = new Search();
@@ -46,7 +46,7 @@ class SearchLibraryApplicationTests {
 		search.setCategory("Test Category");
 		search.setisbn(123456789L);
 
-		assertEquals(1L, search.getBookID());
+		assertEquals("1L", search.getBookID());
 		assertEquals("Test Title", search.getTitle());
 		assertEquals("Test Author", search.getAuthor());
 		assertEquals("Test Category", search.getCategory());
@@ -57,7 +57,7 @@ class SearchLibraryApplicationTests {
 	void testSetBookId() {
 		Search search = new Search();
 		search.setBookId("123L");
-		assertEquals(123L, search.getBookID());
+		assertEquals("123L", search.getBookID());
 	}
 
 	@Test
@@ -87,7 +87,7 @@ class SearchLibraryApplicationTests {
 		search.setisbn(987654321L);
 		assertEquals(987654321L, search.getisbn());
 	}
-	*/
+
 	@Test
 	void testConexion() throws Exception{
 		try (Connection connection = managementDataSource.getConnection()){

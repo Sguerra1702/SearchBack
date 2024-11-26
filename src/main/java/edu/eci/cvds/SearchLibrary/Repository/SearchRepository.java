@@ -13,7 +13,3 @@ public interface SearchRepository extends JpaRepository<Search, Long>{
     List<Search> findByAuthorContaining(String author);
     List<Search> findBycategoryContaining(String category);
 }
-
-
-
-

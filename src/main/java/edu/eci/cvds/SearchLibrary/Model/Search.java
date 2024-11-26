@@ -1,14 +1,15 @@
 package edu.eci.cvds.SearchLibrary.Model;
 
-import org.springframework.data.annotation.Id;
-
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 
+import jakarta.persistence.Entity;
+
+@Entity
 public class Search {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long Id;
+
 
     private String bookID; // Se cambio a String 
     private String title;
